@@ -1,0 +1,3 @@
+# Patrones
+
+**SINGLETON Y PROTOTYPE**
