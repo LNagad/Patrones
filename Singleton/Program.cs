@@ -1,5 +1,6 @@
 ﻿using System;
-using Negocio2;
+using Negocio;
+
 
 namespace Singleton
 {
@@ -7,13 +8,22 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
+            //SINGLETON
+            
+            Console.WriteLine( Negocio.Singleton.Instance.mensaje);
 
-            Console.WriteLine( Negocio2.Singleton.Instance.mensaje);
+            Negocio.Singleton.Instance.mensaje = "Hola Maycol";
 
-            Negocio2.Singleton.Instance.mensaje = "Hola Maycol";
+            Console.WriteLine(Negocio.Singleton.Instance.mensaje);
 
-            Console.WriteLine(Negocio2.Singleton.Instance.mensaje);
 
+            //PROTOTYPE
+            PrototypeAnimal oAnimal = new PrototypeAnimal() { Nombre = "Wilson el gato", Patas = 4};
+            PrototypeAnimal oAnimalClonado = oAnimal.Clone() as PrototypeAnimal;
+            oAnimalClonado.Patas = 5;
+
+            Console.WriteLine("Animal original "+ oAnimal.Patas +" patas");
+            Console.WriteLine("Animal clonado "+oAnimalClonado.Patas + " patas");
         }
     }
 }
